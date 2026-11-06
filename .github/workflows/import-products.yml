@@ -1,0 +1,30 @@
+name: Import produktów (Open Food Facts)
+
+on:
+  schedule:
+    - cron: "17 3 * * 1"   # w każdy poniedziałek ok. 4:17 czasu polskiego
+  workflow_dispatch:        # przycisk "Run workflow" w zakładce Actions
+
+permissions:
+  contents: write
+
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Testy parsera
+        run: python -m unittest discover -s scripts -p "test_*.py"
+      - name: Pobierz produkty
+        run: python scripts/import_off.py
+      - name: Zapisz zmiany w repozytorium
+        run: |
+          git config user.name "co-zjesc-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/off
+          git diff --cached --quiet || git commit -m "Aktualizacja produktów z Open Food Facts"
+          git push

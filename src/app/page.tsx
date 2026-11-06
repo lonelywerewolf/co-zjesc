@@ -1,69 +1,45 @@
-import Image from "next/image";
+import ingredientsData from "../../data/ingredients.json";
+import { CATEGORY_LABELS, type Ingredient, type IngredientCategory } from "@/lib/types";
+
+const ingredients = ingredientsData as Ingredient[];
 
 export default function Home() {
+  const groups = new Map<IngredientCategory, Ingredient[]>();
+  for (const ing of ingredients) {
+    const list = groups.get(ing.category) ?? [];
+    list.push(ing);
+    groups.set(ing.category, list);
+  }
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+    <main className="mx-auto w-full max-w-2xl px-4 py-8">
+      <header className="mb-8">
+        <p className="text-sm font-semibold uppercase tracking-wider text-[var(--accent)]">Wersja 0.1</p>
+        <h1 className="mt-1 text-3xl font-bold">Co zjeść?</h1>
+        <p className="mt-2 text-[var(--muted)]">
+          Baza składników, z których powstaną przepisy. Planer tygodnia pojawi się w kolejnym kroku.
+        </p>
+      </header>
+
+      {[...groups.entries()].map(([category, items]) => (
+        <section key={category} className="mb-6">
+          <h2 className="mb-2 text-lg font-semibold">
+            {CATEGORY_LABELS[category]} <span className="text-[var(--muted)] font-normal">({items.length})</span>
+          </h2>
+          <ul className="divide-y divide-[var(--line)] rounded-xl border border-[var(--line)] bg-[var(--card)]">
+            {items.map((ing) => (
+              <li key={ing.slug} className="flex items-baseline justify-between gap-3 px-4 py-2.5">
+                <span>{ing.name}</span>
+                <span className="shrink-0 text-sm tabular-nums text-[var(--muted)]">
+                  {ing.kcal} kcal · B {ing.protein_g} g
+                </span>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ))}
+
+      <p className="mt-8 text-xs text-[var(--muted)]">Wartości na 100 g. {ingredients.length} składników.</p>
+    </main>
   );
 }
