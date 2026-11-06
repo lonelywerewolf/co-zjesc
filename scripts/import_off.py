@@ -14,6 +14,7 @@ from __future__ import annotations
 import json
 import sys
 import time
+import urllib.error
 import urllib.parse
 import urllib.request
 from pathlib import Path
@@ -71,7 +72,19 @@ def normalize(raw: dict) -> dict | None:
     }
 
 
-def fetch_page(store_tag: str, page: int) -> dict:
+RETRY_STATUSES = {429, 500, 502, 503, 504}
+RETRY_DELAYS_S = [15, 30, 60, 120, 240]  # Open Food Facts bywa chwilowo przeciążony
+
+_sleep = time.sleep  # podmieniane w testach
+
+
+def _get_json(url: str) -> dict:
+    req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
+    with urllib.request.urlopen(req, timeout=60) as resp:
+        return json.load(resp)
+
+
+def fetch_page(store_tag: str, page: int, get_json=_get_json) -> dict:
     params = urllib.parse.urlencode({
         "countries_tags_en": "poland",
         "stores_tags": store_tag,
@@ -80,16 +93,45 @@ def fetch_page(store_tag: str, page: int) -> dict:
         "page": page,
         "sort_by": "unique_scans_n",  # najpierw najczęściej skanowane = najpopularniejsze
     })
-    req = urllib.request.Request(f"{API}?{params}", headers={"User-Agent": USER_AGENT})
-    with urllib.request.urlopen(req, timeout=60) as resp:
-        return json.load(resp)
+    url = f"{API}?{params}"
+    for attempt, delay in enumerate([*RETRY_DELAYS_S, None], start=1):
+        try:
+            return get_json(url)
+        except urllib.error.HTTPError as err:
+            if err.code not in RETRY_STATUSES or delay is None:
+                raise
+            retry_after = err.headers.get("Retry-After") if err.headers else None
+            wait = int(retry_after) if retry_after and retry_after.isdigit() else delay
+            print(f"  HTTP {err.code}, próba {attempt}, czekam {wait} s")
+        except (urllib.error.URLError, TimeoutError) as err:
+            if delay is None:
+                raise
+            wait = delay
+            print(f"  błąd sieci ({err}), próba {attempt}, czekam {wait} s")
+        _sleep(wait)
+    raise RuntimeError("nieosiągalne")
 
 
-def import_store(slug: str) -> int:
+def load_existing(slug: str) -> dict[str, dict]:
+    path = OUT_DIR / f"{slug}.json"
+    if not path.exists():
+        return {}
+    return {p["barcode"]: p for p in json.loads(path.read_text(encoding="utf-8"))}
+
+
+def import_store(slug: str, get_json=_get_json) -> tuple[int, bool]:
+    """Zwraca (liczba produktów w pliku, czy pobrano wszystkie strony)."""
     tag = STORES[slug]
-    products: dict[str, dict] = {}
+    # Startujemy od poprzednich danych: przerwany import niczego nie usuwa.
+    products = load_existing(slug)
+    complete = True
     for page in range(1, MAX_PAGES + 1):
-        data = fetch_page(tag, page)
+        try:
+            data = fetch_page(tag, page, get_json)
+        except Exception as err:  # noqa: BLE001 - zapisujemy to, co już mamy
+            print(f"! {slug}: przerwano na stronie {page}: {err}")
+            complete = False
+            break
         batch = data.get("products") or []
         for raw in batch:
             item = normalize(raw)
@@ -98,13 +140,14 @@ def import_store(slug: str) -> int:
         print(f"{slug}: strona {page}, razem {len(products)}")
         if len(batch) < PAGE_SIZE:
             break
-        time.sleep(PAUSE_S)
+        _sleep(PAUSE_S)
 
-    OUT_DIR.mkdir(parents=True, exist_ok=True)
-    out = OUT_DIR / f"{slug}.json"
-    ordered = sorted(products.values(), key=lambda p: p["name"].lower())
-    out.write_text(json.dumps(ordered, ensure_ascii=False, indent=1), encoding="utf-8")
-    return len(ordered)
+    if products:
+        OUT_DIR.mkdir(parents=True, exist_ok=True)
+        out = OUT_DIR / f"{slug}.json"
+        ordered = sorted(products.values(), key=lambda p: p["name"].lower())
+        out.write_text(json.dumps(ordered, ensure_ascii=False, indent=1), encoding="utf-8")
+    return len(products), complete
 
 
 def main(argv: list[str]) -> None:
@@ -112,11 +155,17 @@ def main(argv: list[str]) -> None:
     for slug in slugs:
         if slug not in STORES:
             sys.exit(f"Nieznany sklep: {slug}. Dostępne: {', '.join(STORES)}")
+    total = 0
     for i, slug in enumerate(slugs):
-        count = import_store(slug)
-        print(f"✓ {slug}: zapisano {count} produktów")
+        count, complete = import_store(slug)
+        total += count
+        mark = "✓" if complete else "~"
+        note = "" if complete else " (niepełny, dokończy się przy następnym uruchomieniu)"
+        print(f"{mark} {slug}: zapisano {count} produktów{note}")
         if i < len(slugs) - 1:
-            time.sleep(PAUSE_S)
+            _sleep(PAUSE_S)
+    if total == 0:
+        sys.exit("Nie udało się pobrać żadnych produktów.")
 
 
 if __name__ == "__main__":
