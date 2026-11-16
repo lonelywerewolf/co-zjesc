@@ -236,9 +236,9 @@
    "en:beverages",
    "en:plant-based-foods",
    "en:cereals-and-potatoes",
-   "en:dairy-substitutes",
    "en:cereals-and-their-products",
-   "en:milk-substitutes"
+   "en:dairy-substitutes",
+   "en:plant-based-beverages"
   ]
  },
  {
@@ -664,8 +664,8 @@
    "en:plant-based-foods-and-beverages",
    "en:beverages",
    "en:dairy-substitutes",
-   "en:milk-substitutes",
    "en:plant-based-beverages",
+   "en:milk-substitutes",
    "en:plant-based-milk-alternatives"
   ]
  },
@@ -2046,7 +2046,7 @@
  {
   "barcode": "5901588026381",
   "name": "Czeko tubka. Krem karmelowy",
-  "brand": "E. Wedel",
+  "brand": "Lotte",
   "quantity": "50 g",
   "package_g": 50.0,
   "kcal": 559.0,
@@ -2531,7 +2531,7 @@
  {
   "barcode": "5901588088563",
   "name": "E. Wedel Śmietankowe",
-  "brand": "E. Wedel",
+  "brand": "Lotte",
   "quantity": "60 g (90 ml)",
   "package_g": 60.0,
   "kcal": 353.0,
@@ -3536,11 +3536,11 @@
    "en:plant-based-foods-and-beverages",
    "en:plant-based-foods",
    "en:meals",
+   "en:pastas-and-dumplings",
    "en:dried-products",
-   "en:dried-products-to-be-rehydrated",
    "en:pastas",
    "en:soups",
-   "en:dried-meals"
+   "en:dried-products-to-be-rehydrated"
   ]
  },
  {
@@ -3924,7 +3924,7 @@
  {
   "barcode": "4014500501994",
   "name": "Jogurt Jogobella",
-  "brand": "Jogobella",
+  "brand": "Zott",
   "quantity": "330 g",
   "package_g": 330.0,
   "kcal": 90.0,
@@ -4746,8 +4746,8 @@
   "categories": [
    "en:plant-based-foods-and-beverages",
    "en:plant-based-foods",
-   "en:seeds",
    "en:cereals-and-potatoes",
+   "en:seeds",
    "en:cereals-and-their-products",
    "en:cereal-grains",
    "en:groats",
@@ -6020,12 +6020,12 @@
   "categories": [
    "en:plant-based-foods-and-beverages",
    "en:plant-based-foods",
+   "en:cereals-and-potatoes",
    "en:fruits-and-vegetables-based-foods",
    "en:vegetable-based-foods-and-beverages",
    "en:canned-foods",
-   "en:cereals-and-potatoes",
-   "en:vegetables-based-foods",
-   "en:canned-plant-based-foods"
+   "en:cereals-and-their-products",
+   "en:vegetables-based-foods"
   ]
  },
  {
@@ -6105,8 +6105,8 @@
    "en:plant-based-foods-and-beverages",
    "en:plant-based-foods",
    "en:cereals-and-potatoes",
-   "en:meals",
    "en:cereals-and-their-products",
+   "en:meals",
    "en:cereal-semolinas",
    "en:wheat-semolinas",
    "en:durum-wheat-semolinas"
@@ -6128,8 +6128,8 @@
    "en:plant-based-foods-and-beverages",
    "en:plant-based-foods",
    "en:cereals-and-potatoes",
-   "en:meals",
    "en:cereals-and-their-products",
+   "en:meals",
    "en:prepared-salads",
    "en:groats"
   ]
@@ -6203,6 +6203,7 @@
   "categories": [
    "en:meals",
    "en:pasta-dishes",
+   "en:pasta-in-sauce",
    "en:prepared-lasagne"
   ]
  },
@@ -6243,7 +6244,7 @@
  {
   "barcode": "8711327617407",
   "name": "Lemon pie",
-  "brand": "Carte d'or",
+  "brand": "Carte d'Or",
   "quantity": "825 ml",
   "package_g": 825.0,
   "kcal": 165.0,
@@ -7434,9 +7435,9 @@
    "en:beverages",
    "en:plant-based-foods",
    "en:dairy-substitutes",
+   "en:plant-based-beverages",
    "en:milk-substitutes",
-   "en:nuts-and-their-products",
-   "en:plant-based-beverages"
+   "en:nuts-and-their-products"
   ]
  },
  {
@@ -8336,9 +8337,9 @@
    "en:beverages",
    "en:plant-based-foods",
    "en:dairy-substitutes",
+   "en:plant-based-beverages",
    "en:milk-substitutes",
-   "en:nuts-and-their-products",
-   "en:plant-based-beverages"
+   "en:nuts-and-their-products"
   ]
  },
  {
@@ -8457,9 +8458,9 @@
    "en:beverages",
    "en:plant-based-foods",
    "en:cereals-and-potatoes",
-   "en:dairy-substitutes",
    "en:cereals-and-their-products",
-   "en:milk-substitutes"
+   "en:dairy-substitutes",
+   "en:plant-based-beverages"
   ]
  },
  {
@@ -8480,9 +8481,9 @@
    "en:beverages",
    "en:plant-based-foods",
    "en:cereals-and-potatoes",
-   "en:dairy-substitutes",
    "en:cereals-and-their-products",
-   "en:milk-substitutes"
+   "en:dairy-substitutes",
+   "en:plant-based-beverages"
   ]
  },
  {
@@ -8504,8 +8505,8 @@
    "en:plant-based-foods",
    "en:legumes-and-their-products",
    "en:dairy-substitutes",
-   "en:milk-substitutes",
-   "en:plant-based-beverages"
+   "en:plant-based-beverages",
+   "en:milk-substitutes"
   ]
  },
  {
@@ -8527,8 +8528,8 @@
    "en:plant-based-foods",
    "en:legumes-and-their-products",
    "en:dairy-substitutes",
-   "en:milk-substitutes",
-   "en:plant-based-beverages"
+   "en:plant-based-beverages",
+   "en:milk-substitutes"
   ]
  },
  {
@@ -8550,8 +8551,8 @@
    "en:plant-based-foods",
    "en:legumes-and-their-products",
    "en:dairy-substitutes",
-   "en:milk-substitutes",
-   "en:plant-based-beverages"
+   "en:plant-based-beverages",
+   "en:milk-substitutes"
   ]
  },
  {
@@ -8573,8 +8574,8 @@
    "en:plant-based-foods",
    "en:legumes-and-their-products",
    "en:dairy-substitutes",
-   "en:milk-substitutes",
-   "en:plant-based-beverages"
+   "en:plant-based-beverages",
+   "en:milk-substitutes"
   ]
  },
  {
@@ -8657,8 +8658,8 @@
    "en:plant-based-foods-and-beverages",
    "en:plant-based-foods",
    "en:legumes-and-their-products",
-   "en:legumes",
    "en:cereals-and-potatoes",
+   "en:legumes",
    "en:cereals-and-their-products",
    "en:groats"
   ]
@@ -8772,8 +8773,8 @@
    "en:beverages",
    "en:fruit-based-foods-and-beverages",
    "en:dairy-substitutes",
-   "en:milk-substitutes",
    "en:plant-based-beverages",
+   "en:milk-substitutes",
    "en:fruit-based-beverages"
   ]
  },
@@ -9688,6 +9689,7 @@
    "en:plant-based-foods",
    "en:cereals-and-potatoes",
    "en:cereals-and-their-products",
+   "en:pastas-and-dumplings",
    "en:pastas",
    "en:dry-pastas"
   ]
@@ -10687,8 +10689,8 @@
    "en:vegetable-based-foods-and-beverages",
    "en:vegetables-based-foods",
    "en:dried-products",
-   "en:tomatoes-and-their-products",
-   "en:dried-plant-based-foods"
+   "en:processed-vegetables",
+   "en:tomatoes-and-their-products"
   ]
  },
  {
@@ -11082,8 +11084,8 @@
   "categories": [
    "en:beverages-and-beverages-preparations",
    "en:beverages",
-   "en:cocoa-and-its-products",
    "en:hot-beverages",
+   "en:cocoa-and-its-products",
    "en:cocoa-and-chocolate-powders",
    "en:cocoa-powders"
   ]
@@ -11363,8 +11365,8 @@
   "categories": [
    "en:plant-based-foods-and-beverages",
    "en:plant-based-foods",
-   "en:seeds",
    "en:cereals-and-potatoes",
+   "en:seeds",
    "en:cereals-and-their-products",
    "en:cereal-grains",
    "en:rices",
@@ -11409,8 +11411,8 @@
   "categories": [
    "en:plant-based-foods-and-beverages",
    "en:plant-based-foods",
-   "en:seeds",
    "en:cereals-and-potatoes",
+   "en:seeds",
    "en:cereals-and-their-products",
    "en:cereal-grains",
    "en:rices"
@@ -12359,6 +12361,7 @@
    "en:plant-based-foods",
    "en:cereals-and-potatoes",
    "en:cereals-and-their-products",
+   "en:raw-doughs",
    "en:pie-dough",
    "en:puff-pastry-sheets"
   ]
@@ -12733,8 +12736,8 @@
    "en:plant-based-foods",
    "en:legumes-and-their-products",
    "en:dairy-substitutes",
-   "en:milk-substitutes",
-   "en:plant-based-beverages"
+   "en:plant-based-beverages",
+   "en:milk-substitutes"
   ]
  },
  {
@@ -12756,8 +12759,8 @@
    "en:plant-based-foods",
    "en:legumes-and-their-products",
    "en:dairy-substitutes",
-   "en:milk-substitutes",
-   "en:plant-based-beverages"
+   "en:plant-based-beverages",
+   "en:milk-substitutes"
   ]
  },
  {
@@ -13333,8 +13336,8 @@
    "en:plant-based-foods",
    "en:fruits-and-vegetables-based-foods",
    "en:vegetable-based-foods-and-beverages",
-   "en:vegetables-based-foods",
-   "en:plant-based-beverages"
+   "en:plant-based-beverages",
+   "en:vegetables-based-foods"
   ]
  },
  {
@@ -13379,8 +13382,8 @@
    "en:plant-based-foods",
    "en:fruits-and-vegetables-based-foods",
    "en:vegetable-based-foods-and-beverages",
-   "en:vegetables-based-foods",
-   "en:plant-based-beverages"
+   "en:plant-based-beverages",
+   "en:vegetables-based-foods"
   ]
  },
  {
@@ -14004,8 +14007,8 @@
   "categories": [
    "en:beverages-and-beverages-preparations",
    "en:beverages",
-   "en:artificially-sweetened-beverages",
    "en:beverage-preparations",
+   "en:artificially-sweetened-beverages",
    "en:syrups",
    "en:flavoured-syrups"
   ]
@@ -14900,7 +14903,7 @@
  {
   "barcode": "5900820009076",
   "name": "Twaróg Klinek półtłusty",
-  "brand": "Biedronka",
+  "brand": "Mlekpol",
   "quantity": "250 g",
   "package_g": 250.0,
   "kcal": 117.0,
@@ -15367,11 +15370,11 @@
   "categories": [
    "en:plant-based-foods-and-beverages",
    "en:plant-based-foods",
-   "en:snacks",
    "en:cereals-and-potatoes",
+   "en:snacks",
+   "en:cereals-and-their-products",
    "en:salty-snacks",
    "en:appetizers",
-   "en:cereals-and-their-products",
    "en:puffed-cereal-cakes"
   ]
  },

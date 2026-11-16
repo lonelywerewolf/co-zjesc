@@ -227,18 +227,18 @@
   "categories": [
    "en:plant-based-foods-and-beverages",
    "en:plant-based-foods",
-   "en:snacks",
    "en:cereals-and-potatoes",
+   "en:snacks",
+   "en:cereals-and-their-products",
    "en:salty-snacks",
    "en:sweet-snacks",
-   "en:biscuits-and-cakes",
-   "en:cereals-and-their-products"
+   "en:biscuits-and-cakes"
   ]
  },
  {
   "barcode": "4056489997511",
   "name": "Bioowsiany Napój Pochodzenia Roślinnego",
-  "brand": "VEMONDO BIO",
+  "brand": "Vemondo",
   "quantity": "1l",
   "package_g": 1000.0,
   "kcal": 37.0,
@@ -282,7 +282,7 @@
  {
   "barcode": "20980382",
   "name": "Brie Naturalny",
-  "brand": "Lidl",
+  "brand": "Pilos",
   "quantity": "125 g",
   "package_g": 125.0,
   "kcal": 288.0,
@@ -322,7 +322,7 @@
    "en:canned-foods",
    "en:vegetables-based-foods",
    "en:canned-plant-based-foods",
-   "en:vegetables"
+   "en:processed-vegetables"
   ]
  },
  {
@@ -650,11 +650,11 @@
    "en:beverages-and-beverages-preparations",
    "en:beverages",
    "en:non-alcoholic-beverages",
-   "en:carbonated-drinks",
    "en:soft-drinks",
+   "en:carbonated-drinks",
+   "en:flavoured-soft-drinks",
    "en:sodas",
-   "en:colas",
-   "en:cola-with-sugar"
+   "en:colas"
   ]
  },
  {
@@ -883,8 +883,8 @@
    "en:plant-based-foods",
    "en:fruits-and-vegetables-based-foods",
    "en:vegetable-based-foods-and-beverages",
-   "en:vegetables-based-foods",
-   "en:plant-based-beverages"
+   "en:plant-based-beverages",
+   "en:vegetables-based-foods"
   ]
  },
  {
@@ -906,8 +906,8 @@
    "en:plant-based-foods",
    "en:fruits-and-vegetables-based-foods",
    "en:vegetable-based-foods-and-beverages",
-   "en:vegetables-based-foods",
-   "en:plant-based-beverages"
+   "en:plant-based-beverages",
+   "en:vegetables-based-foods"
   ]
  },
  {
@@ -1346,7 +1346,7 @@
  {
   "barcode": "20799939",
   "name": "Jogurt bananowy Pilos",
-  "brand": "pilos",
+  "brand": "Pilos",
   "quantity": "350g",
   "package_g": 350.0,
   "kcal": 85.0,
@@ -1448,11 +1448,11 @@
    "en:beverages-and-beverages-preparations",
    "en:plant-based-foods-and-beverages",
    "en:beverages",
+   "en:fruit-based-foods-and-beverages",
    "en:plant-based-beverages",
    "en:fruit-based-beverages",
    "en:juices-and-nectars",
-   "en:fruit-juices",
-   "en:fruit-juices-from-concentrate"
+   "en:fruit-juices"
   ]
  },
  {
@@ -1966,8 +1966,8 @@
   "categories": [
    "en:plant-based-foods-and-beverages",
    "en:plant-based-foods",
-   "en:seeds",
    "en:cereals-and-potatoes",
+   "en:seeds",
    "en:cereals-and-their-products",
    "en:cereal-grains",
    "en:rices"
@@ -2052,10 +2052,10 @@
    "en:plant-based-foods",
    "en:cereals-and-potatoes",
    "en:cereals-and-their-products",
+   "en:pastas-and-dumplings",
    "en:pastas",
    "en:cereal-pastas",
-   "en:durum-wheat-pasta",
-   "en:durum-wheat-noodles"
+   "en:durum-wheat-pasta"
   ]
  },
  {
@@ -2259,7 +2259,7 @@
  {
   "barcode": "5900120011885",
   "name": "Mleko UHT 3,2%",
-  "brand": "OSM Łowicz",
+  "brand": "Pilos",
   "quantity": "1 l",
   "package_g": 1000.0,
   "kcal": 60.0,
@@ -2578,8 +2578,8 @@
    "en:plant-based-foods-and-beverages",
    "en:plant-based-foods",
    "en:cereals-and-potatoes",
-   "en:fats",
    "en:cereals-and-their-products",
+   "en:fats",
    "en:vegetable-fats",
    "en:vegetable-oils",
    "en:cereal-oils"
@@ -2669,8 +2669,8 @@
    "en:plant-based-foods-and-beverages",
    "en:beverages",
    "en:fermented-foods",
-   "en:fermented-drinks",
    "en:plant-based-beverages",
+   "en:fermented-drinks",
    "en:smoothies",
    "en:fermented-plant-milk-drinks"
   ]
@@ -2745,7 +2745,7 @@
  {
   "barcode": "4056489025115",
   "name": "Paluszki surimi",
-  "brand": "ocean sea",
+  "brand": "Ocean Sea",
   "quantity": "250 g",
   "package_g": 250.0,
   "kcal": 136.0,
@@ -2967,8 +2967,8 @@
   "salt_g": 0.7,
   "categories": [
    "en:meals",
-   "en:pasta-dishes",
    "en:pastas-and-dumplings",
+   "en:pasta-dishes",
    "en:stuffed-pastas",
    "en:dumplings",
    "en:pierogi"
@@ -3069,12 +3069,12 @@
   "categories": [
    "en:plant-based-foods-and-beverages",
    "en:plant-based-foods",
-   "en:frozen-foods",
    "en:cereals-and-potatoes",
+   "en:frozen-foods",
+   "en:cereals-and-their-products",
    "en:meals",
-   "en:pizzas-pies-and-quiches",
-   "en:bakery-products",
-   "en:frozen-pizzas-and-pies"
+   "en:raw-doughs",
+   "en:pizzas-pies-and-quiches"
   ]
  },
  {
@@ -3537,7 +3537,7 @@
  {
   "barcode": "20207786",
   "name": "Ser Gouda",
-  "brand": "Lidl",
+  "brand": "Pilos",
   "quantity": "250 g",
   "package_g": 250.0,
   "kcal": 366.0,
@@ -3557,7 +3557,7 @@
  {
   "barcode": "4056489799610",
   "name": "Ser gouda",
-  "brand": "JERMI Käsewerk",
+  "brand": "Pilos",
   "quantity": "500 g",
   "package_g": 500.0,
   "kcal": 344.0,
@@ -3572,9 +3572,9 @@
    "en:fermented-milk-products",
    "en:cheeses",
    "en:cow-cheeses",
+   "en:firm-ripened-cheeses",
    "en:semi-hard-cheeses",
-   "en:uncooked-pressed-cheeses",
-   "en:gouda"
+   "en:uncooked-pressed-cheeses"
   ]
  },
  {
@@ -3600,7 +3600,7 @@
  {
   "barcode": "20933487",
   "name": "Ser Tylżycki, plastry.",
-  "brand": "Lidl",
+  "brand": "Mlekpol",
   "quantity": "150 g",
   "package_g": 150.0,
   "kcal": 347.0,
@@ -3709,7 +3709,7 @@
  {
   "barcode": "20932954",
   "name": "Serek z orzechami",
-  "brand": "Lidl",
+  "brand": "Pilos",
   "quantity": "150 g",
   "package_g": 150.0,
   "kcal": 231.0,
@@ -3850,11 +3850,11 @@
    "en:beverages-and-beverages-preparations",
    "en:plant-based-foods-and-beverages",
    "en:beverages",
+   "en:fruit-based-foods-and-beverages",
    "en:plant-based-beverages",
    "en:fruit-based-beverages",
    "en:juices-and-nectars",
-   "en:fruit-juices",
-   "en:unsweetened-beverages"
+   "en:fruit-juices"
   ]
  },
  {
@@ -3997,12 +3997,12 @@
   "categories": [
    "en:plant-based-foods-and-beverages",
    "en:plant-based-foods",
+   "en:pastas-and-dumplings",
    "en:dried-products",
-   "en:dried-products-to-be-rehydrated",
    "en:pastas",
+   "en:dried-products-to-be-rehydrated",
    "en:noodles",
-   "en:instant-noodles",
-   "en:instant-noodle-soups"
+   "en:instant-noodles"
   ]
  },
  {
