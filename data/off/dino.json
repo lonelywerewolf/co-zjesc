@@ -1524,14 +1524,12 @@
   "fiber_g": null,
   "salt_g": 0.5,
   "categories": [
-   "en:plant-based-foods-and-beverages",
-   "en:plant-based-foods",
-   "en:fats",
    "en:spreads",
-   "en:plant-based-spreads",
-   "en:vegetable-fats",
+   "en:fats",
    "en:spreadable-fats",
-   "en:margarines"
+   "en:margarines",
+   "en:butter-and-vegetable-oil-blends",
+   "en:30-40-blended-fat-with-vegetable-and-animal-origins"
   ]
  },
  {
